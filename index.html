@@ -19,7 +19,7 @@
     <script>
 stlite.mount(
   {
-    requirements: ["matplotlib","numpy","plotly"], // Packages to install
+    requirements: ["matplotlib","numpy","plotly","pandas"], // Packages to install
     entrypoint: "👋_Hello.py",
     files: {
       "👋_Hello.py": `
@@ -81,6 +81,27 @@ st.plotly_chart(
     theme="streamlit",  # ✨ Optional, this is already set by default!
 )
 `,        
+ 
+      
+      
+"pages/5_🎈_Page5.py": `      
+import pandas as pd
+import streamlit as st
+
+st.set_page_config(page_title="Page5")
+st.title("Page 5")
+
+uploaded_file = st.file_uploader('Upload a file')
+
+df = pd.read_csv(uploaded_file)
+st.write(df)
+
+`,       
+      
+      
+      
+      
+      
       
       
     },
