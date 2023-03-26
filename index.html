@@ -19,7 +19,7 @@
     <script>
 stlite.mount(
   {
-    requirements: ["matplotlib"], // Packages to install
+    requirements: ["matplotlib","numpy","plotly"], // Packages to install
     entrypoint: "👋_Hello.py",
     files: {
       "👋_Hello.py": `
@@ -62,9 +62,19 @@ ax.hist(arr, bins=20)
 st.pyplot(fig)
 `,    
       
-      
+"pages/4_🎈_Page4.py": `      
+import numpy as np
+import plotly.graph_objects as go
+import streamlit as st
 
-      
+z = np.random.random_sample((3, 2))
+fig = go.Figure(data=go.Contour(z=z))
+
+st.plotly_chart(
+    fig, 
+    theme="streamlit",  # ✨ Optional, this is already set by default!
+)
+`,        
       
       
     },
