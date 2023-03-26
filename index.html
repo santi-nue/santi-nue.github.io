@@ -53,6 +53,9 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 
+st.set_page_config(page_title="Page3")
+st.title("Page 3")
+
 size = st.slider("Sample size", 100, 1000)
 
 arr = np.random.normal(1, 1, size=size)
@@ -66,6 +69,9 @@ st.pyplot(fig)
 import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
+
+st.set_page_config(page_title="Page4")
+st.title("Page 4")
 
 z = np.random.random_sample((3, 2))
 fig = go.Figure(data=go.Contour(z=z))
